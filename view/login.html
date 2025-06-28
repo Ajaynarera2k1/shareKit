@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/session.js"></script>
+</head>
+<body>
+       <div class="grid grid-cols-2 h-screen overflow-hidden">
+        <div class=" flex flex-col items-center mt-[12rem] gap-y-6 ">
+               
+                 
+                  <div class="flex gap-1 h-7">
+                    <img src="images/logo.png" class=" h-10"/>
+                    <h2 class="text-3xl font-semibold ">Share<span class="text-blue-600">Kit</span></h2>                 
+                  </div>  
+               <h3 class="text-5xl font-bold ml-5">Welcome Back !</h3>
+               <p class="text-lg text-gray-500">Add your info to use our service</p>
+               <form class="flex flex-col gap-y-4 w-4/6" onsubmit="login(event)">
+                    <input name="name" type="text" placeholder="Email" class="border border-gray-300 p-3 rounded-md">
+                    <input name="password" type="password" placeholder="password" class="border border-gray-300 p-3 rounded-md">
+                    <button class="border border-gray-300 p-3 bg-slate-900 text-white font-semibold rounded-md" >Sign In</button>
+               </form>
+               <div>
+                   <label class="text-gray-600 text-base">I don`t have an account</label>
+                   <a class="text-base text-blue-600" href="Signup.html">Create Account ?</a>
+               </div>
+        </div>
+        <div class="div">
+            <img src="images/login-bg.jpg"/>
+        </div>
+       </div>
+</body>
+</html>
