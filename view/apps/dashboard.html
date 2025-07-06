@@ -59,8 +59,8 @@
         <label class="text-sm" id="storage"></label>
       </div>
 
-      <a class="bg-slate-900 w-full p-3 text-white rounded block text-center">
-        <i class="ri-money-rupee-circle-fill text-lg"></i>
+      <a class="bg-slate-900 w-full p-3 text-white rounded block text-center" onclick="openPlans()">
+        <i class="ri-money-rupee-circle-fill text-lg" ></i>
         Upgrade Now
       </a>
       
@@ -75,6 +75,14 @@
             <div id="chart"></div>
         </div>
     </div>
+
+    <!-- drawer  for plans -->
+      <div id="drawer" class="fixed top-0 -right-[400px] w-[400px] h-full shadow-lg bg-white p-6 overflow-auto">
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-lg font-medium">Plans</h1>
+        <i class="ri-close-circle-fill" onclick="closeDrawer()"></i>
+      </div>
+      </div>
 
     <script>
         var options = {

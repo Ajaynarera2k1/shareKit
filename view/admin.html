@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/admin.js"></script>
+</head>
+<body>
+    <!-- component -->
+ <div class="flex flex-col lg:flex-row gap-6 p-4 sm:p-8 bg-gray-50 min-h-screen">
+
+  <!-- LEFT SIDE: FORM -->
+  <div class=" lg:w-1/2">
+    <div class="relative py-3 sm:max-w-xl w-[450px] m-10 mx-auto">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+      <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-10">
+        <div class="max-w-md mx-auto">
+          <h1 class="text-2xl font-semibold mb-6">Create Plan</h1>
+          <form onsubmit="createPlan(event)" class="space-y-6">
+            <div class="relative">
+              <input autocomplete="off" id="name" name="name" type="text"
+                class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-blue-500"
+                placeholder="Plan Name" />
+              <label for="name"
+                class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-gray-600">
+                Plan Name</label>
+            </div>
+            <div class="relative">
+              <input autocomplete="off" id="storage" name="storage" type="number"
+                class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-blue-500"
+                placeholder="Storage" />
+              <label for="storage"
+                class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-gray-600">
+                Storage</label>
+            </div>
+            <div class="relative">
+              <input autocomplete="off" id="price" name="price" type="number"
+                class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-blue-500"
+                placeholder="Price" />
+              <label for="price"
+                class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-gray-600">
+                Price</label>
+            </div>
+            <div>
+              <button type="submit" class="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600 transition">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE: PLAN CARDS -->
+  <div class="w-full lg:w-1/2 flex flex-col gap-4 overflow-y-auto px-2 bg-blue-500 rounded-lg m-6 py-4" id="plans">
+  
+    <!-- You can add more plan cards below similarly -->
+  </div>
+
+</div>
+
+
+    
+</body>
+</html>

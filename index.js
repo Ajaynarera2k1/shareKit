@@ -14,6 +14,7 @@ import verifyToken from './controller/token.controller.js'
 import Authorization from './middleware/authorization.middleware.js'
 import Download from './middleware/download.middleware.js'
 import { createFile, deleteFile, downloadFile, fetchFiles, shareFile } from './controller/file.controller.js'
+import { fetchPlan , createPlan } from './controller/plan.controller.js'
 import dashboard from './controller/dashboard.controller.js'
 
 const app = express()
@@ -60,3 +61,5 @@ app.get("/api/file/download", Download, downloadFile)
 app.post("/api/file/share", Authorization, shareFile)
 app.get('/api/dashboard', Authorization, dashboard)
 app.get("/api/storage", Authorization, fetchStorage)
+app.post("/api/plan" , createPlan)
+app.get("/api/plan" , fetchPlan)
