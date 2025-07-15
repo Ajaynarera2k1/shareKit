@@ -58,7 +58,7 @@ const openPlans = async ()=>{
                       </div>
                        <div class="flex items-end justify-between mt-4">
                              <p><span class="text-lg font-bold">${getMb(item.storage)} MB</span> of storage</p>
-                             <p class="text-sm font-bold">${item.price.toLocaleString() }/ mo</p>
+                             <p class="text-sm font-bold">${item.price.toLocaleString() } $/ mo</p>
                        </div>
               </div>
             `

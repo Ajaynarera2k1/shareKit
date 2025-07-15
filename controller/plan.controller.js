@@ -17,7 +17,7 @@ export const createPlan = async (req, res) => {
 
 export const fetchPlan = async(req , res) => {
                    try{
-                     const plans = await planModel.find()
+                     const plans = await planModel.find().sort({createAt : -1})
                         res.status(200).json(plans)
                 }
                 catch(err){

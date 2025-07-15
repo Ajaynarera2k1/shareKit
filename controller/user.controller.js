@@ -1,4 +1,5 @@
 import UserModel from '../model/user.model.js'
+import planModel from '../model/plan.model.js'
 import FileModel from '../model/file.model.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
@@ -7,6 +8,10 @@ import path from 'path'
 
 export const signup = async (req, res)=>{
     try {
+        const plan = await planModel.find({ name : 'starter'})
+        req.body.plan = plan._id
+
+        
         const newUser = new UserModel(req.body)
         await newUser.save()
         res.status(200).json({
@@ -101,10 +106,7 @@ export const uploadProfilePicture = async (req, res)=>{
 
 export const fetchStorage = async (req, res)=>{
     try {
-        const user = await UserModel.findById(req.user.id, {
-            storage: 1,
-            _id: 0
-        }) 
+        const user = await UserModel.findById(req.user.id).populate('plan') 
 
         const file = await FileModel.aggregate([
             {
@@ -121,7 +123,7 @@ export const fetchStorage = async (req, res)=>{
         ])
 
         res.status(200).json({
-            storage: user.storage,
+            storage: user.plan.storage,
             usedStorage: file.length ? file[0].usedStorage : 0
         })
     }
